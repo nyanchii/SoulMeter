@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Utiliry">
+      <UniqueIdentifier>{ad83ad20-9a32-4a9a-b6d0-1856261f3a63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PCH">
+      <UniqueIdentifier>{98aaad53-9218-4124-bbc4-781020721044}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utiliry\헤더 파일">
+      <UniqueIdentifier>{2af47c99-4a53-4981-a929-4358b3050a8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utiliry\소스 파일">
+      <UniqueIdentifier>{8dd826a1-e48f-4d12-91b0-ddf8aab7b108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SWPacket">
+      <UniqueIdentifier>{74698d75-9804-4949-8f82-14715d4c566e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SWPacket\헤더 파일">
+      <UniqueIdentifier>{23193675-e0df-4c9d-a68c-32430a0eb29d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SWPacket\소스 파일">
+      <UniqueIdentifier>{effd8eb3-6812-4d39-8eb2-dd10e4eccb3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SWPacket\Packet">
+      <UniqueIdentifier>{53757cd3-4ef9-4ed2-b1e6-0474e6a25bf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Damge Meter">
+      <UniqueIdentifier>{80ce6a70-681f-4467-a0eb-127456ea6e8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Damge Meter\SQLite">
+      <UniqueIdentifier>{44527f9c-69fc-487a-a30d-a540b023912e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Damge Meter\SWDamageType">
+      <UniqueIdentifier>{de70e6bd-958b-4232-8145-be840081ce6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PacketCapture">
+      <UniqueIdentifier>{8f52f91d-3646-4373-a9b2-ff5407e77710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PacketCapture\Windivert">
+      <UniqueIdentifier>{cc45cd86-4bc0-4752-9144-ca54c3369ea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PacketCapture\Npcap">
+      <UniqueIdentifier>{06914ea2-a2cf-4890-bb91-273c88831e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{186890fb-9fce-434d-982a-2949c5a2fb52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\DirectX11">
+      <UniqueIdentifier>{eb5d51d8-5912-4a3c-9390-8a15042a270f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\ImGui">
+      <UniqueIdentifier>{d2aad894-675e-4085-a9ec-99fc7061c6ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tinyxml2">
+      <UniqueIdentifier>{2aa49e1b-8330-47f5-8606-ecf267edb5d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Window">
+      <UniqueIdentifier>{c7cfdb79-64a1-4829-b1e7-8e656121d92c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Window\UI">
+      <UniqueIdentifier>{d1da892c-51f8-4ffd-af79-67efd73c9dad}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\PacketType.h">
+      <Filter>SWPacket\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacketMaker.h">
+      <Filter>SWPacket\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\CriticalSection.h">
+      <Filter>Utiliry\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\ExceptionHandler.h">
+      <Filter>Utiliry\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Log.h">
+      <Filter>Utiliry\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\MemoryPool.h">
+      <Filter>Utiliry\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\MultiThreadSync.h">
+      <Filter>Utiliry\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Singleton.h">
+      <Filter>Utiliry\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Type.h">
+      <Filter>Utiliry\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet Capture\MyNpcap.h">
+      <Filter>PacketCapture\Npcap</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet Capture\MyWinDivert.h">
+      <Filter>PacketCapture\Windivert</Filter>
+    </ClInclude>
+    <ClInclude Include="Damage Meter\Damage Meter.h">
+      <Filter>Damge Meter</Filter>
+    </ClInclude>
+    <ClInclude Include="Damage Meter\MySQLite.h">
+      <Filter>Damge Meter\SQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="Damage Meter\SWDamagePlayer.h">
+      <Filter>Damge Meter\SWDamageType</Filter>
+    </ClInclude>
+    <ClInclude Include="Damage Meter\SWDamageMonster.h">
+      <Filter>Damge Meter\SWDamageType</Filter>
+    </ClInclude>
+    <ClInclude Include="Damage Meter\SWDamageSkill.h">
+      <Filter>Damge Meter\SWDamageType</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacketDamage.h">
+      <Filter>SWPacket\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacket.h">
+      <Filter>SWPacket\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacketObjectCreate.h">
+      <Filter>SWPacket\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacketWorldChange.h">
+      <Filter>SWPacket\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacketAkasic.h">
+      <Filter>SWPacket\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacketParty.h">
+      <Filter>SWPacket\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacketPos.h">
+      <Filter>SWPacket\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\DX11.h">
+      <Filter>UI\DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UiWindow.h">
+      <Filter>UI\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Damage Meter\Timer.h">
+      <Filter>Damge Meter</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Option.h">
+      <Filter>UI\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\HotKey.h">
+      <Filter>UI\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\PlayerTable.h">
+      <Filter>UI\Window\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\DX Input.h">
+      <Filter>UI\DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacketMazeEnd.h">
+      <Filter>SWPacket\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Soulworker Packet\SWPacketMazeStart.h">
+      <Filter>SWPacket\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Damage Meter\History.h">
+      <Filter>Damge Meter</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\SpecificInfomation.h">
+      <Filter>UI\Window\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Third Party\imgui\Custom.h">
+      <Filter>UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Third Party\imgui\imgui.h">
+      <Filter>UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Third Party\imgui\imgui_internal.h">
+      <Filter>UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Third Party\imgui\backends\imgui_impl_dx11.h">
+      <Filter>UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Third Party\imgui\backends\imgui_impl_win32.h">
+      <Filter>UI\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Third Party\tinyxml2\tinyxml2.h">
+      <Filter>tinyxml2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacketMaker.cpp">
+      <Filter>SWPacket\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\CriticalSection.cpp">
+      <Filter>Utiliry\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\ExceptionHandler.cpp">
+      <Filter>Utiliry\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Log.cpp">
+      <Filter>Utiliry\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\MemoryPool.cpp">
+      <Filter>Utiliry\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\MultiThreadSync.cpp">
+      <Filter>Utiliry\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Type.cpp">
+      <Filter>Utiliry\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet Capture\MyNpcap.cpp">
+      <Filter>PacketCapture\Npcap</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet Capture\MyWinDivert.cpp">
+      <Filter>PacketCapture\Windivert</Filter>
+    </ClCompile>
+    <ClCompile Include="Damage Meter\Damage Meter.cpp">
+      <Filter>Damge Meter</Filter>
+    </ClCompile>
+    <ClCompile Include="Damage Meter\MySQLite.cpp">
+      <Filter>Damge Meter\SQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="Damage Meter\SWDamagePlayer.cpp">
+      <Filter>Damge Meter\SWDamageType</Filter>
+    </ClCompile>
+    <ClCompile Include="Damage Meter\SWDamageMonster.cpp">
+      <Filter>Damge Meter\SWDamageType</Filter>
+    </ClCompile>
+    <ClCompile Include="Damage Meter\SWDamageSkill.cpp">
+      <Filter>Damge Meter\SWDamageType</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacketDamage.cpp">
+      <Filter>SWPacket\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacket.cpp">
+      <Filter>SWPacket\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacketObjectCreate.cpp">
+      <Filter>SWPacket\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacketWorldChange.cpp">
+      <Filter>SWPacket\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacketAkasic.cpp">
+      <Filter>SWPacket\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacketParty.cpp">
+      <Filter>SWPacket\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacketPos.cpp">
+      <Filter>SWPacket\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\DX11.cpp">
+      <Filter>UI\DirectX11</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UiWindow.cpp">
+      <Filter>UI\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Damage Meter\Timer.cpp">
+      <Filter>Damge Meter</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Option.cpp">
+      <Filter>UI\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\HotKey.cpp">
+      <Filter>UI\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\PlayerTable.cpp">
+      <Filter>UI\Window\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\DX Input.cpp">
+      <Filter>UI\DirectX11</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacketMazeEnd.cpp">
+      <Filter>SWPacket\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Soulworker Packet\SWPacketMazeStart.cpp">
+      <Filter>SWPacket\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Damage Meter\History.cpp">
+      <Filter>Damge Meter</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\SpecificInfomation.cpp">
+      <Filter>UI\Window\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Third Party\imgui\Custom.cpp">
+      <Filter>UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Third Party\imgui\imgui.cpp">
+      <Filter>UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Third Party\imgui\imgui_draw.cpp">
+      <Filter>UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Third Party\imgui\imgui_tables.cpp">
+      <Filter>UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Third Party\imgui\imgui_widgets.cpp">
+      <Filter>UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Third Party\imgui\backends\imgui_impl_dx11.cpp">
+      <Filter>UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Third Party\imgui\backends\imgui_impl_win32.cpp">
+      <Filter>UI\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Third Party\tinyxml2\tinyxml2.cpp">
+      <Filter>tinyxml2</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
