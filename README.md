@@ -1,3 +1,5 @@
 # SoulMeter
 
-僅適用於 Soulworker Steam TW Server，8人副本封包未解
+基礎版本為@nyanchii最後一版
+
+Thanks @nyanchii, @Park3740
