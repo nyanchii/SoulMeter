@@ -8,7 +8,6 @@ typedef struct _SWPACKETSPAWNEDCHARINFO_HEADER {
 	UINT32 _playerId;
 	USHORT _nameSize;
 }SWPACKETSPAWNEDCHARINFO_HEADER;
-// 길드명이라던가 뭔가 많지만 생략
 
 #pragma pack(pop)
 

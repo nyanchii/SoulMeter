@@ -44,7 +44,7 @@ public:
 
 	vector<SWDamageSkill*>::const_iterator begin();
 	vector<SWDamageSkill*>::const_iterator end();
-	const SIZE_T& size();
+	const SIZE_T size();
 
 
 	VOID AddDamage(UINT64 damage, UINT64 critDamage, USHORT hitCount, USHORT critHitCount, UINT32 skillID);

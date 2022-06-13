@@ -2,7 +2,7 @@
 
 #define WIN32_LEAN_AND_MEAN
 #define DIRECTINPUT_VERSION 0x0800
-#pragma warning( disable : 4727)
+#pragma warning( disable : 4727) // pch
 
 #include <Windows.h>
 

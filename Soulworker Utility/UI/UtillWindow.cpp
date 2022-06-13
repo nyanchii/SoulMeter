@@ -26,7 +26,7 @@ VOID UtillWindow::OpenWindow()
 VOID UtillWindow::Update()
 {
 	//if (_isOpen) {
-	//	ImGui::Begin(u8"전투 로그", &_isOpen, ImGuiWindowFlags_None);
+	//	ImGui::Begin(u8"", &_isOpen, ImGuiWindowFlags_None);
 	//	
 	//	ImGui::BeginChild("Scrolling");
 	//	std::list<string>::iterator it;

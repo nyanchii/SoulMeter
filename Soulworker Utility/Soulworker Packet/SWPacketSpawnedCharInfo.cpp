@@ -14,7 +14,6 @@ VOID SWPacketSpawnedCharInfo::Do() {
 	BYTE* p_data = _data;
 	p_data += sizeof(SWHEADER) + sizeof(SWPACKETSPAWNEDCHARINFO_HEADER);
 
-	// !!!!! 이거 job 아니였음; 나는 7로 뜨는데 다른사람은 전부 1로 뜸
 	BYTE job = *(p_data + spawned_header->_nameSize + 1);
 
 	WCHAR utf16[MAX_NAME_LEN] = { 0 };

@@ -9,15 +9,15 @@
 
 UiOption::UiOption()  :  _open(0), _framerate(1), _windowBorderSize(1), _fontScale(1), _columnFontScale(1), _tableFontScale(1), _is1K(0), _is1M(0), _isSoloMode(0), _hideName(0), _isTopMost(true), _cellPadding(0, 0), _windowWidth(800), _refreshTime((FLOAT)0.3) {
 	_jobBasicColor[0] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(153, 153, 153, 255)));	// Unknown
-	_jobBasicColor[1] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(247, 142, 59, 255)));	// 하루
-	_jobBasicColor[2] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(59, 147, 247, 255)));	// 어윈
-	_jobBasicColor[3] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(247, 59, 156, 255)));	// 릴리
-	_jobBasicColor[4] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(247, 190, 59, 255)));	// 진
-	_jobBasicColor[5] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(161, 59, 247, 255)));	// 스텔라
-	_jobBasicColor[6] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(223, 1, 1, 255)));	// 이리스
-	_jobBasicColor[7] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(138, 2, 4, 255)));		// 치이
-	_jobBasicColor[8] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(118, 206, 158, 255)));	// 에프넬
-	_jobBasicColor[9] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(128, 128, 64, 255)));	// 이나비
+	_jobBasicColor[1] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(247, 142, 59, 255)));	// haru
+	_jobBasicColor[2] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(59, 147, 247, 255)));	// owin
+	_jobBasicColor[3] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(247, 59, 156, 255)));	// lily
+	_jobBasicColor[4] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(247, 190, 59, 255)));	// kin
+	_jobBasicColor[5] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(161, 59, 247, 255)));	// stella
+	_jobBasicColor[6] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(223, 1, 1, 255)));	// iris
+	_jobBasicColor[7] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(138, 2, 4, 255)));		// chii
+	_jobBasicColor[8] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(118, 206, 158, 255)));	// eph
+	_jobBasicColor[9] = ImVec4(ImGui::ColorConvertU32ToFloat4(ImColor(128, 128, 64, 255)));	// nabi
 
 	for (int i = 0; i < 10; i++)
 		_jobColor[i] = _jobBasicColor[i];
@@ -208,7 +208,6 @@ VOID UiOption::OpenOption() {
 			}
 
 			if (ImGui::BeginTabItem(STR_OPTION_TAB_HOTKEY_SETTING)) {
-				// 귀찮구만
 				ShowHotkeySetting();
 				ImGui::EndTabItem();
 			}
@@ -771,7 +770,7 @@ BOOL UiOption::ToggleTopMost() {
 	return SaveOption();
 }
 
-const ImU32& UiOption::GetJobColor(UINT index) {
+const ImU32 UiOption::GetJobColor(UINT index) {
 
 	if (index < 0 || index > 9)
 		return ImGui::ColorConvertFloat4ToU32(_jobColor[0]);
@@ -779,7 +778,7 @@ const ImU32& UiOption::GetJobColor(UINT index) {
 	return ImGui::ColorConvertFloat4ToU32(_jobColor[index]);
 }
 
-const ImU32& UiOption::GetOutlineColor() {
+const ImU32 UiOption::GetOutlineColor() {
 	return ImGui::ColorConvertFloat4ToU32(_outlineColor);
 }
 

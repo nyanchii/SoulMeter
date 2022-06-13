@@ -124,6 +124,6 @@ vector<SWDamageSkill*>::const_iterator SWDamageMonster::end() {
 	return _skillinfo.end();
 }
 
-const SIZE_T& SWDamageMonster::size() {
+const SIZE_T SWDamageMonster::size() {
 	return _skillinfo.size();
 }

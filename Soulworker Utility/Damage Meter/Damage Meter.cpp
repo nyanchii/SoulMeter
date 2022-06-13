@@ -479,7 +479,7 @@ vector<SWDamagePlayer*>::const_iterator SWDamageMeter::end() {
 	return _playerInfo.end();
 }
 
-const SIZE_T& SWDamageMeter::size() {
+const SIZE_T SWDamageMeter::size() {
 	return _playerInfo.size();
 }
 

@@ -261,11 +261,6 @@ BOOL MySQL::GetMonsterName(UINT32 DB2, CHAR* out_buffer, SIZE_T out_buffer_lengt
 	if (out_buffer == nullptr || _monster_stmt == nullptr)
 		return FALSE;
 
-	//if (DB1 == 0) {
-	//	strcpy_s(out_buffer, out_buffer_length, const_cast<CHAR*>(u8"메이즈 정보 X"));
-	//	return TRUE;
-	//}
-
 	sprintf_s(out_buffer, out_buffer_length, "%d", DB2);
 
 	sqlite3_reset(_monster_stmt);

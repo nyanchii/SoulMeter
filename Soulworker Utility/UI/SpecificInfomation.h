@@ -11,7 +11,7 @@ private:
 	FLOAT _tableTime;
 	FLOAT _accumulatedTime;
 
-	// 스킬 상세 정보
+	// Skill Details
 	UINT32 _monsterID_SKILL;
 
 	CHAR _skillName[64];
@@ -22,7 +22,7 @@ private:
 	VOID UpdateSkillTable();
 	VOID UpdateSkillTotalTable();
 
-	// 버프 집계 정보
+	// Buff Aggregation Information
 	VOID UpdateBuffMeter();
 	VOID UpdateBuffTable();
 

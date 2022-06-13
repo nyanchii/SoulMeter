@@ -82,7 +82,7 @@ VOID SWPacketPartyListInfo::Do() {
 		UINT32 leaderId = *((UINT32*)p_data);
 		p_data += 4;
 
-		BYTE unknown05 = *p_data; // 이게 1일경우 파티, 2일 경우 포스인걸로 추정됨
+		BYTE unknown05 = *p_data; // 1=teammates 2=enemy
 		p_data += 1;
 		BYTE unknown06 = *p_data;
 		p_data += 1;

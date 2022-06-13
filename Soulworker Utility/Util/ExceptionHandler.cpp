@@ -1,7 +1,7 @@
 #include "pch.h"
 #include ".\Util\ExceptionHandler.h"
 
-typedef BOOL(WINAPI* MINIDUMPWRITEDUMP)( // Callback 함수의 원형
+typedef BOOL(WINAPI* MINIDUMPWRITEDUMP)( // Callback 
     HANDLE hProcess,
     DWORD dwPid,
     HANDLE hFile,
@@ -12,18 +12,18 @@ typedef BOOL(WINAPI* MINIDUMPWRITEDUMP)( // Callback 함수의 원형
 
 LPTOP_LEVEL_EXCEPTION_FILTER PreviousExceptionFilter = NULL;
 
-// UnHandled Exception이 발생했을 때 넘어오는 콜백
+// UnHandled Exception
 LONG WINAPI UnHandledExceptionFilter(struct _EXCEPTION_POINTERS* exceptionInfo)
 {
     printf("Unhandled exception");
     HMODULE DllHandle = NULL;
 
-    // Windows 2000 이전에는 따로 DBGHELP를 배포해서 설정해 주어야 한다.
+    // DBGHELP.
     DllHandle = LoadLibrary(_T("DBGHELP.DLL"));
 
     if (DllHandle)
     {
-        // 덤프를 받아 파일로 만드는 과정
+        // 
         MINIDUMPWRITEDUMP Dump = (MINIDUMPWRITEDUMP)GetProcAddress(DllHandle, "MiniDumpWriteDump");
 
         if (Dump)
@@ -31,7 +31,6 @@ LONG WINAPI UnHandledExceptionFilter(struct _EXCEPTION_POINTERS* exceptionInfo)
             TCHAR DumpPath[MAX_PATH] = { 0, };
             SYSTEMTIME SystemTime;
 
-            // 현제 시간을 가져온다.
             GetLocalTime(&SystemTime);
 
             _sntprintf_s(DumpPath, MAX_PATH, _T("%d-%d-%d %d_%d_%d.dmp"),
@@ -54,7 +53,7 @@ LONG WINAPI UnHandledExceptionFilter(struct _EXCEPTION_POINTERS* exceptionInfo)
             {
                 _MINIDUMP_EXCEPTION_INFORMATION MiniDumpExceptionInfo;
 
-                // MiniDump 예외 정보 저장 구조체이다.
+                // MiniDump
                 MiniDumpExceptionInfo.ThreadId = GetCurrentThreadId();
                 MiniDumpExceptionInfo.ExceptionPointers = exceptionInfo;
                 MiniDumpExceptionInfo.ClientPointers = NULL;
@@ -64,7 +63,7 @@ LONG WINAPI UnHandledExceptionFilter(struct _EXCEPTION_POINTERS* exceptionInfo)
                     GetCurrentProcessId(),
                     FileHandle,                    
                     MiniDumpNormal,
-                    &MiniDumpExceptionInfo,        // 예외 정보
+                    &MiniDumpExceptionInfo,
                     NULL,
                     NULL);
 

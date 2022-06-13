@@ -527,7 +527,7 @@ public:
 	vector<SWDamagePlayer*>::const_iterator GetPlayerInfo(UINT32 id);
 	vector<SWDamagePlayer*>::const_iterator begin();
 	vector<SWDamagePlayer*>::const_iterator end();
-	const SIZE_T& size();
+	const SIZE_T size();
 
 	SW_PLAYER_METADATA* GetPlayerMetaData(UINT32 id);
 

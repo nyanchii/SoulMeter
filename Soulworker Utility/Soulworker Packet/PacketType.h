@@ -59,8 +59,6 @@
 #include ".\Soulworker Packet\SWSPacketMyDodgeUsed.h"
 #include ".\Soulworker Packet\SWSPacketHeartbeat.h"
 
-// 대충 여기에 다 집어놓고 packetType만 include해서 쓰면 됨
-
 
 // opcode0106: 01=mainCMD, 06=subCMD
 enum OPcode {
@@ -80,7 +78,7 @@ enum OPcode {
 	JUMP = 0x0506,
 	CANCEL_WITHMOVE = 0x0511,
  
-	DODGE = 0x0607, // 회피,다운후구르기, 공중피격후 회피에 사용됨?
+	DODGE = 0x0607,
 	USESKILL = 0x0609,
 	OTHER_USESKILL = 0x0610,
 	DAMAGE = 0x0613,

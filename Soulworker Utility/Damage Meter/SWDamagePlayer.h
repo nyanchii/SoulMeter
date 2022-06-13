@@ -8,36 +8,36 @@ using namespace std;
 #define DEBUG_DAMAGE_PLAYER 0
 
 static unordered_set<UINT32> dpsIgnoreIdList({
-	/* 히하(HH) */
-	31308106, // 허밋(Hermit)
-	31308102, 31308103, 31308104, // 히하 레드/블루/그린 토템 (totem)
-	31308105, 31308112, 31308111, 31308114, 31308115, // 신앙심, 신앙심(기믹), 번뇌(80줄), 번뇌(50줄), 번뇌(20줄)
-	31308110, 31308113, 31308116, // 분신(돌진), 분신(회전), 분신(랜덤돌진) 
+	/* (HH) */
+	31308106, // (Hermit)
+	31308102, 31308103, 31308104, // (totem)
+	31308105, 31308112, 31308111, 31308114, 31308115, // defilement
+	31308110, 31308113, 31308116, // Clone of Raphakumba
 
-	/* 루나폴(LF) */
-	31309109, 31309154, // 저지먼트 크러셔, 추적토템
+	/* (LF) */
+	31309109, 31309154, // Queen's Sword
 
-	/* 프멀, 히프멀(Primal, Hero Primal) */
-	// 나중에...
+	/* (Primal, Hero Primal) */
+	// ..
 
-	/* 브세(BS) */
-	31310111, 31310112, // 기믹용 추정
-	31310116, 31310117, // 테네브리스의 불꽃 (빛,어둠)
-	31310151, 31310152, 31310153, 31310154, // 붐 퍼펫, 포스 피스트, 쫄몹34? (남은건 헤비 워리어, 데들리 나이프인데 누가 누군지는 아직 모름)
-	31310192, // 2페 상자
+	/* (BS) */
+	31310111, 31310112, // Tenebris
+	31310116, 31310117, // Flame of Tenebris
+	31310151, 31310152, 31310153, 31310154, // Mobs
+	31310192, // Reward box
 
-	//31310108, 31310109, // 아마 얼음이랑 봉자
-	31310118, 31310119, // 이게 진짜 얼음이랑 봉자 (위에껀 오타)
+	/* (BSVH) */
+	31310118, 31310119, // Desire Energy Fragment, Hazy Beam
 
 	/* Rocco Town Hero */
 	34401502, 34401503, 34401504,
 	34401702,
 	34401802, 34401803,
 
-	/* 기타(etc) */
-	14000101, 14000102, 14000103, // 퍼펫 빨강/파랑/금색 구슬 (puppet orb)
-	1081102, 1081103, 1081104, 1081105, 1081106, 1081107, 1081108, 1081109, // 옥타곤 1렙~5렙+특성3렙 (octagon)
-	1091101 // 폭심지 (wicked bomb)
+	/* (etc) */
+	14000101, 14000102, 14000103, // (puppet orb)
+	1081102, 1081103, 1081104, 1081105, 1081106, 1081107, 1081108, 1081109, // (octagon)
+	1091101 // (wicked bomb)
 
 	});
 
@@ -148,7 +148,7 @@ public:
 	vector<SWDamageMonster*>::const_iterator GetMonsterInfo(UINT id);
 	vector<SWDamageMonster*>::const_iterator begin();
 	vector<SWDamageMonster*>::const_iterator end();
-	const SIZE_T& size();
+	const SIZE_T size();
 
 	VOID AddDamage(UINT64 totalDMG, UINT64 soulstoneDMG, SWPACKETDAMAGE_DAMAGETYPE damageType, USHORT maxCombo, UINT32 monsterID, UINT32 skillID);
 };

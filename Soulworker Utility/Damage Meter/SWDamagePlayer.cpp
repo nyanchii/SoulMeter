@@ -383,6 +383,6 @@ vector<SWDamageMonster*>::const_iterator SWDamagePlayer::end() {
 	return _monsterInfo.end();
 }
 
-const SIZE_T& SWDamagePlayer::size() {
+const SIZE_T SWDamagePlayer::size() {
 	return _monsterInfo.size();
 }

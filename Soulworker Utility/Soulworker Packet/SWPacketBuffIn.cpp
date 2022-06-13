@@ -18,13 +18,6 @@ VOID SWPacketBuffIn::Do() {
 		if (DAMAGEMETER.CheckPlayer(buff->_playerID)) {
 			DAMAGEMETER.BuffIn(buff->_playerID, buff->_buffID, buff->_stack, buff->_giverID);
 			BUFFMETER.AddBuff(buff->_playerID, buff->_buffID, buff->_stack);
-
-			//if (buff->_buffID == 9078) {
-			//	PLOTWINDOW.AddAnnonation(u8"혈전");
-			//}
-			//if (buff->_buffID == 9083) {
-			//	PLOTWINDOW.AddAnnonation(u8"갈망");
-			//}
 		}
 			//Log::MyLog(const_cast<LPTSTR>(_T("[DEBUG] [BUFF IN] [PLAYER ID = %08x] [BUFF ID = %d] [BUFF STACK = %d] [DURATION = %f] [GIVER ID = %08x] [Unknown = %u]\n")), buff->_playerID, buff->_buffID, buff->_stack, buff->_duration, buff->_giverID, buff->_unknown01);
 

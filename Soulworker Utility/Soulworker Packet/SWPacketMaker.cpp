@@ -5,57 +5,6 @@
 
 SWPacketMaker::SWPacketMaker() {
 	_isSegmentation = FALSE;
-
-	//read ketTable from file
-	//key file format:
-	//	[USHORT		SWMAGIC]
-	//	[int		keyLength]
-	//	[BYTE[]		keyTable] 
-	//	[char[]		description]
-	//	EOF
-	/*char buffer[64];
-	errno_t err;
-	FILE *keyFile;
-	if ((err = fopen_s(&keyFile, KEY_FILE_NAME, "rb")) != 0) {
-		sprintf_s(_keyInfo, "Invalid_KeyFile");
-	}
-	else{
-
-		//check file size
-		fseek(keyFile, 0, SEEK_END);
-		int fileSize = ftell(keyFile);
-		rewind(keyFile);
-		
-		//read SWMAGIC
-		fread(&_SWMAGIC, sizeof(USHORT), 1, keyFile);
-
-		//read key length
-		int tmpKeyLen = 0;
-		fread(&tmpKeyLen, sizeof(int), 1, keyFile);
-
-		if (tmpKeyLen > 0 && tmpKeyLen < 64) {
-
-			if (fileSize - sizeof(int) - tmpKeyLen < 0) {
-				sprintf_s(_keyInfo, "Invalid_KeySize");
-				fclose(keyFile);
-				return;
-			}
-			fread(&buffer, sizeof(char), tmpKeyLen, keyFile);
-			//read key
-			//decrypt if needed
-			_keyLength = tmpKeyLen;
-			memcpy(_keyTable, buffer, _keyLength);
-			memset(buffer, 0, sizeof(buffer));
-
-
-			int info_len = fileSize - sizeof(int) - sizeof(USHORT) - tmpKeyLen;
-			fread(&buffer, sizeof(char), (info_len) > 64 ? 64: info_len, keyFile);
-			//read description
-			sprintf_s(_keyInfo, "%s", buffer);
-
-		}
-		fclose(keyFile);
-	}*/
 }
 
 SWPacketMaker::~SWPacketMaker() {
@@ -254,7 +203,7 @@ VOID SWPacketMaker::CreateSWPacket(IPv4Packet* packet) {
 		case OPcode::MAZESTART:
 			swpacket = new SWPacketMazeStart(swheader, data);
 			break;
-		case OPcode::SPAWNED_CHARINFO: //用不到
+		case OPcode::SPAWNED_CHARINFO:
 			//swpacket = new SWPacketSpawnedCharInfo(swheader, data);
 			break;
 		case OPcode::IN_INFO_MONSTER: //0605
@@ -337,7 +286,7 @@ VOID SWPacketMaker::CreateSWPacket(IPv4Packet* packet) {
 			break;
 
 			/* 0x2e Force*/
-			// 8人組隊
+			// 8 players party
 		case OPcode::POS: //0430
 			swpacket = new SWPacketPos(swheader, data);
 			break;

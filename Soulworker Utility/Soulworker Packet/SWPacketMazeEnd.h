@@ -7,7 +7,7 @@ typedef struct _SWPACKETMAZEEND {
 	BYTE _rank; // 0 : F, 1: C, 2: B, 3: A, 4 : S, 5: SS
 	UINT32 _playScore;
 	UINT32 _clearScore;
-	UINT32 _clearTime; // 1587 = 158.7초
+	UINT32 _clearTime; // 1587 = 158.7s
 
 
 }SWPACKETCHATMAZEEND;

@@ -39,16 +39,16 @@ enum StatType {
 	// MagicCritChance = 0x22,
 	CritDamage = 0x23,
 	MagicCritDamage = 0x24,
-	// 데미지 감소 확률(%) = 0x25,
+	// Damage reduction chance(%) = 0x25,
 	DamageReduction = 0x26,
 	MagicDamageReduction = 0x27,
-	// 지속 상태이상 저항력(%) = 0x28,
-	// 조작 상태이상 저항력(%) = 0x29,
-	// 특수 상태이상 저항력(%) = 0x2a,
+	// Resistance to permanent status ailments(%) = 0x28,
+	// Resistance to manipulation status(%) = 0x29,
+	// Resistance to special status abnormalities(%) = 0x2a,
 	Evade = 0x2b,
 	MagicEvade = 0x2c,
-	// 공격 성공률 (사용안함) = 0x2d,
-	// 마법 공격 성공률 (사용안함) = 0x2e,
+	// Attack Success Rate (Disabled) = 0x2d,
+	// Magic attack success rate (disabled) = 0x2e,
 	ArmorBreak = 0x2f,
 	MagicArmorBreak = 0x30,
 	// 0x31 ~ 0x3c : status effect resist
@@ -59,9 +59,9 @@ enum StatType {
 };
 #pragma pack(push, 1)
 typedef struct _SWPACKETDAMAGE_DAMAGETYPE {
-	unsigned int MISS : 1; // 감나빗 0x01
+	unsigned int MISS : 1; // Gamnabit 0x01
 	unsigned int unknown2 : 1;
-	unsigned int CRIT : 1; // 크리 0x04
+	unsigned int CRIT : 1; // critical 0x04
 	unsigned int unknown4 : 1;
 	unsigned int soulstoneType : 4;
 

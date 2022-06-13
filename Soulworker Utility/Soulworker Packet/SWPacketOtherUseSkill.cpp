@@ -34,9 +34,9 @@ VOID SWPacketOtherUseSkill::Do() {
 			//	Log::MyLog(_T("2"));
 				SWDB.GetSkillName(otherSkill->_skillId, _skillName, SKILL_NAME_LEN);
 				//Log::MyLog(_T("3"));
-				string test = u8"테네브리스가 [";
+				string test = u8" [";
 				test.append(_skillName);
-				test.append(u8"]를 사용");
+				test.append(u8"]");
 				UTILLWINDOW.AddLog(test);
 				//Log::MyLog(test.c_str());
 			}

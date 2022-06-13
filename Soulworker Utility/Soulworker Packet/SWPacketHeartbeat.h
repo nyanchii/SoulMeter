@@ -1,15 +1,10 @@
 #pragma once
 #include ".\Soulworker Packet\SWPacket.h"
 
-/*
-* 도통 뭔지 모르겠음 ㅅㅂ
-* 1초마다 계속 날아옴
-*/
-
 #pragma pack(push, 1)
 typedef struct _SWPACKETHEARTBEAT {
 	BYTE _unknown01; //0430new
-	UINT32 _millisecond; // 1000이 1초인 무언가
+	UINT32 _randomNumber; // random
 	BYTE _unknown02[4];
 }SWPACKETHEARTBEAT;
 
