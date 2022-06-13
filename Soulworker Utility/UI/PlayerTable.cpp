@@ -76,7 +76,7 @@ VOID PlayerTable::Update() {
 		_accumulatedTime += UIWINDOW.GetDeltaTime();
 
 		if (_accumulatedTime > UIOPTION.GetRefreshTime()) {
-			_tableTime = static_cast<FLOAT>(DAMAGEMETER.GetTime() / 1000);
+			_tableTime = static_cast<FLOAT>(((DOUBLE)DAMAGEMETER.GetTime()) / 1000);
 			_accumulatedTime = 0;
 		}
 
