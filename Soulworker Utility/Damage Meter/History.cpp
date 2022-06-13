@@ -2,7 +2,7 @@
 #include ".\Damage Meter\History.h"
 #include ".\Damage Meter\Damage Meter.h"
 
-VOID _HISTORYINFO::Setup(vector<SWDamagePlayer*>& history, vector<PLAYERBUF*>& buffHistory, PlotInfo* plotHistory, UINT32 worldID, FLOAT time) {
+VOID _HISTORYINFO::Setup(vector<SWDamagePlayer*>& history, vector<PLAYERBUF*>& buffHistory, PlotInfo* plotHistory, UINT32 worldID, ULONG64 time) {
 	_history = history;
 	_buffHistory = buffHistory;
 	_plotHistory = plotHistory;

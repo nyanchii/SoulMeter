@@ -73,7 +73,7 @@ public:
 	BOOL ToggleTopMost();
 
 	const FLOAT& GetFramerate();
-	VOID SetFramerate(UINT i);
+	VOID SetFramerate(FLOAT i);
 
 	const FLOAT& GetWindowWidth();
 	VOID SetWindowWidth(const FLOAT& width);

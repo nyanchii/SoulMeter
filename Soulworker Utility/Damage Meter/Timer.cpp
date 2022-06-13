@@ -16,7 +16,7 @@ VOID Timer::Run() {
 	
 	if (_status == TIMER_STATUS::end) {
 		_startTimePoint = GetCurrentTimeStamp();
-		_suspendedTime = 0.f;
+		_suspendedTime = 0;
 		_status = TIMER_STATUS::run;
 	}
 	else if (_status == TIMER_STATUS::suspend) {

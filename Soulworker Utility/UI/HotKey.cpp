@@ -132,7 +132,7 @@ HotKey::~HotKey() {
 
 VOID HotKey::CheckKey() {
 
-	for (INT i = 0; i < DXINPUT.GetStateSize(); i++) {
+	for (UINT i = 0; i < DXINPUT.GetStateSize(); i++) {
 		if (DXINPUT.isKeyRelease(i)) {
 			for (auto itr = _pressedKey.begin(); itr != _pressedKey.end(); itr++) {
 				if (*itr == i) {
@@ -147,7 +147,7 @@ VOID HotKey::CheckKey() {
 		}
 	}
 
-	for (INT i = 0; i < DXINPUT.GetStateSize(); i++) {
+	for (UINT i = 0; i < DXINPUT.GetStateSize(); i++) {
 		if (DXINPUT.isKeyDown(i)) {
 #if DEBUG_HOTKEY == 1
 			Log::WriteLogA(const_cast<char*>("Down Key - %d"), i);

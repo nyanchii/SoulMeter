@@ -35,5 +35,5 @@ public:
 	SpecificInformation(UINT32 playerID);
 	~SpecificInformation();
 
-	VOID Update(BOOL* open, INT32 index);
+	VOID Update(BOOL* open, INT64 index);
 };

@@ -83,7 +83,7 @@ private:
 
 			memcpy(_data + _curSize, data, size);
 
-			int temp_debug = _curSize;
+			size_t temp_debug = _curSize;
 			_curSize += size;
 
 #if DEBUG_SEGMENTATION == 1
@@ -98,6 +98,7 @@ private:
 				return SEGMENTATION_SUCCESS;
 			else if (_curSize < _packetSize)
 				return SEGMENTATION_FAILED;
+			return SEGMENTATION_FAILED;
 		}
 
 		IPv4Packet* GetData() {

@@ -158,7 +158,7 @@ VOID PlotWindow::UpdatePlotTab()
 		if (timeList.size() > 0) {
 			UINT32 firstId = metaInfos.front()->_id;
 			UINT32 lastId = metaInfos.back()->_id;
-			USHORT currentSize = timeList[firstId].size();
+			size_t currentSize = timeList[firstId].size();
 
 			// 
 			DOUBLE startX = 0.0;
@@ -204,7 +204,7 @@ VOID PlotWindow::UpdatePlotTab()
 				UINT32 id = (*it)->_id;
 				string name = (*it)->_name;
 
-				ImPlot::PlotLine(name.c_str(), timeList[id].data(), dpsList[id].data(), dpsList[id].size());
+				ImPlot::PlotLine(name.c_str(), timeList[id].data(), dpsList[id].data(), static_cast<INT>(dpsList[id].size()));
 			}
 
 			ImPlot::EndPlot();
@@ -222,7 +222,7 @@ VOID PlotWindow::UpdateAbPlotTab()
 		auto _annonXList = _pi->GetAnnonXList();
 		auto _annonYList = _pi->GetAnnonYList();
 		auto _annonContentList = _pi->GetAnnonContentList();
-		UINT32 currentSize = _abTimeList.size();
+		size_t currentSize = _abTimeList.size();
 
 		DOUBLE startX = 0.0;
 		DOUBLE endX = 5.0;
@@ -238,10 +238,10 @@ VOID PlotWindow::UpdateAbPlotTab()
 		}
 		ImPlot::SetNextPlotLimitsY(0.0, 100.0, ImGuiCond_Always);
 		if (ImPlot::BeginPlot(STR_UTILWINDOW_ABGRAPH, STR_UTILWINDOW_ABGRAPH_TIME_SEC, STR_UTILWINDOW_ABGRAPH, ImVec2(-1, 0), ImPlotFlags_AntiAliased, ImPlotAxisFlags_None, ImPlotAxisFlags_None)) {
-			ImPlot::PlotLine(STR_TABLE_YOU, _abTimeList.data(), _abList.data(), _abList.size());
+			ImPlot::PlotLine(STR_TABLE_YOU, _abTimeList.data(), _abList.data(), static_cast<INT>(_abList.size()));
 			auto itr = _annonXList.begin();
 			for (; itr != _annonXList.end(); itr++) {
-				int currentIndex = itr - _annonXList.begin();
+				size_t currentIndex = itr - _annonXList.begin();
 				ImPlot::Annotate(_annonXList.at(currentIndex), _annonYList.at(currentIndex), ImVec2(15, 15), ImVec4(0.30f, 0.30f, 0.30f, 0.84f), _annonContentList.at(currentIndex).c_str());
 			}
 			ImPlot::EndPlot();
@@ -256,7 +256,7 @@ VOID PlotWindow::UpdateJqPlotTab()
 	{
 		auto _jqTimeList = _pi->GetJQTimeList();
 		auto _jqList = _pi->GetJQList();
-		UINT32 currentSize = _jqTimeList.size();
+		size_t currentSize = _jqTimeList.size();
 		DOUBLE startX = 0.0;
 		DOUBLE endX = 5.0;
 		if (currentSize > 45) {
@@ -270,7 +270,7 @@ VOID PlotWindow::UpdateJqPlotTab()
 		}
 		ImPlot::SetNextPlotLimitsY(0, 4, ImGuiCond_Always);
 		if (ImPlot::BeginPlot(STR_UTILWINDOW_JQGRAPH, STR_UTILWINDOW_JQGRAOH_TIME_SEC, STR_UTILWINDOW_JQGRAPH, ImVec2(-1, 0), ImPlotFlags_AntiAliased, ImPlotAxisFlags_None, ImPlotAxisFlags_None)) {
-			ImPlot::PlotLine(STR_TABLE_YOU, _jqTimeList.data(), _jqList.data(), _jqList.size());
+			ImPlot::PlotLine(STR_TABLE_YOU, _jqTimeList.data(), _jqList.data(), static_cast<INT>(_jqList.size()));
 			ImPlot::EndPlot();
 		}
 		ImGui::EndTabItem();
@@ -331,7 +331,7 @@ VOID PlotWindow::UpdateBossHpPlotGraph()
 	auto timeList = _pi->GetBossTimeList();
 	auto bossHpList = _pi->GetBossHpList();
 	if (timeList.size() > 0) {
-		USHORT currentSize = timeList[_selectedBossHpComboID].size();
+		size_t currentSize = timeList[_selectedBossHpComboID].size();
 
 		// 
 		DOUBLE startX = 0.0;
@@ -372,7 +372,7 @@ VOID PlotWindow::UpdateBossHpPlotGraph()
 	}
 
 	if (ImPlot::BeginPlot(STR_UTILWINDOW_BOSSHPGRAPH, STR_UTILWINDOW_BOSSHPGRAPH_TIME_SEC, STR_UTILWINDOW_BOSSHPGRAPH, ImVec2(-1, 0), ImPlotFlags_AntiAliased, ImPlotAxisFlags_None, ImPlotAxisFlags_AutoFit)) {
-		ImPlot::PlotLine(STR_UTILWINDOW_BOSSHPGRAPH_UNIT, timeList[_selectedBossHpComboID].data(), bossHpList[_selectedBossHpComboID].data(), bossHpList[_selectedBossHpComboID].size());
+		ImPlot::PlotLine(STR_UTILWINDOW_BOSSHPGRAPH_UNIT, timeList[_selectedBossHpComboID].data(), bossHpList[_selectedBossHpComboID].data(), static_cast<INT>(bossHpList[_selectedBossHpComboID].size()));
 		ImPlot::EndPlot();
 	}
 }

@@ -129,7 +129,7 @@ public:
 			if (DAMAGEMETER.isRun()) {
 				UINT64 time = (UINT64)((DOUBLE)DAMAGEMETER.GetTime());
 				FLOAT correctedAB = (_armorBreak > 100) ? 100 : _armorBreak;
-				_avgABSum += (time - _avgABPreviousTime) * correctedAB;
+				_avgABSum += static_cast<UINT64>((time - _avgABPreviousTime) * correctedAB);
 				_avgABPreviousTime = time;
 			}
 			_armorBreak = statValue;
@@ -144,7 +144,7 @@ public:
 			_maxHP = statValue;
 			break;
 		case StatType::MinAttack:
-			_maxAttack = statValue * 1.25;
+			_maxAttack = static_cast<FLOAT>(statValue * 1.25);
 			break;
 		case StatType::MaxAttack:
 			_maxAttack = statValue;
@@ -160,7 +160,7 @@ public:
 		UINT64 currentTime = (UINT64)DAMAGEMETER.GetTime();
 
 		FLOAT correctedAB = (_armorBreak > 100) ? 100 : _armorBreak;
-		_avgABSum += (currentTime - _avgABPreviousTime) * correctedAB;
+		_avgABSum += static_cast<UINT64>((currentTime - _avgABPreviousTime) * correctedAB);
 		_avgABPreviousTime = currentTime;
 
 
@@ -178,7 +178,7 @@ public:
 				UINT64 avgTimeDifference = currentTime - _avgABPreviousTime;
 				DOUBLE currentAB = GetStat(StatType::ArmorBreak);
 				currentAB = currentAB > 100.0 ? 100.0 : currentAB; // 
-				UINT64 calculatedAvgAB = (_avgABSum + avgTimeDifference * currentAB);
+				UINT64 calculatedAvgAB = static_cast<UINT64>((_avgABSum + avgTimeDifference * currentAB));
 				(*player)->SetHistoryAvgAB((DOUBLE)calculatedAvgAB / currentTime);
 
 				// 
@@ -467,7 +467,7 @@ private:
 	USHORT _worldID;
 
 	USHORT _historyWorldID;
-	FLOAT _historyTime;
+	ULONG64 _historyTime;
 	INT32 _historyID;
 
 	UINT32 _aggroedId;
@@ -520,7 +520,7 @@ public:
 
 	VOID SetMyID(UINT32 id);
 
-	UINT64 GetMyID();
+	UINT32 GetMyID();
 
 	BOOL CheckPlayer(UINT32 id);
 

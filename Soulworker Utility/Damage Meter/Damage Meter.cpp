@@ -436,7 +436,7 @@ VOID SWDamageMeter::SetMyID(UINT32 id) {
 #endif
 }
 
-UINT64 SWDamageMeter::GetMyID() {
+UINT32 SWDamageMeter::GetMyID() {
 	return _myID;
 }
 

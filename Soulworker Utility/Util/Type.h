@@ -28,7 +28,7 @@ inline BOOL UTF16toUTF8(_In_ WCHAR* src, _Out_ CHAR* dest, _In_ SIZE_T destLen) 
 
 	return TRUE;
 }
-inline BOOL ANSItoUTF8(_In_ CHAR* src, _Out_ CHAR* dest, _In_ SIZE_T destLen) {
+inline BOOL ANSItoUTF8(_In_ CHAR* src, _Out_ CHAR* dest, _In_ INT32 destLen) {
 
 	if (src == nullptr || dest == nullptr)
 		return FALSE;
@@ -60,7 +60,7 @@ inline BOOL TextCommma(_In_ CHAR* src, _Out_ CHAR* dest) {
 		return FALSE;
 	}
 
-	INT len = strlen(src);
+	size_t len = strlen(src);
 
 	while (*src) {
 		*dest++ = *src++;
@@ -69,6 +69,8 @@ inline BOOL TextCommma(_In_ CHAR* src, _Out_ CHAR* dest) {
 			*dest++ = ',';
 	}
 	*dest++ = 0;
+
+	return TRUE;
 }
 inline ULONG64 GetCurrentTimeStamp() {
 	return duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
@@ -130,7 +132,7 @@ typedef struct _IPV4PACKET {
 	IPHEADER* _ipHeader;
 	TCPHEADER* _tcpHeader;
 	const UCHAR* _data;
-	USHORT _datalength;
+	SIZE_T _datalength;
 }IPv4Packet;
 
 #pragma pack(pop)

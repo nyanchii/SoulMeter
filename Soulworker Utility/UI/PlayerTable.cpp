@@ -76,7 +76,7 @@ VOID PlayerTable::Update() {
 		_accumulatedTime += UIWINDOW.GetDeltaTime();
 
 		if (_accumulatedTime > UIOPTION.GetRefreshTime()) {
-			_tableTime = ((DOUBLE)DAMAGEMETER.GetTime()) / 1000;;
+			_tableTime = static_cast<FLOAT>(DAMAGEMETER.GetTime() / 1000);
 			_accumulatedTime = 0;
 		}
 
@@ -90,7 +90,7 @@ VOID PlayerTable::Update() {
 
 		CHAR title[256] = { 0 };
 
-		sprintf_s(title, 256, "%s - %02d:%02d.%01d [v1.3.0.5_%s] Ping: %dms  ###DamageMeter", 
+		sprintf_s(title, 256, "%s - %02d:%02d.%01d [v1.3.0.6_%s] Ping: %lldms  ###DamageMeter", 
 			DAMAGEMETER.GetWorldName(), 
 			(UINT)DAMAGEMETER.GetTime() / (60 * 1000), (UINT)(DAMAGEMETER.GetTime() / 1000) % 60, (UINT)DAMAGEMETER.GetTime() % 1000 / 100,
 			SWPACKETMAKER.GetKeyInfo(),
@@ -149,10 +149,10 @@ VOID PlayerTable::SetMainWindowSize() {
 
 
 	if (UIOPTION.isTopMost()) {
-		SetWindowPos(UIWINDOW.GetHWND(), HWND_TOPMOST, pos.x, pos.y, size.x + 1, size.y + 1, SWP_NOACTIVATE);
+		SetWindowPos(UIWINDOW.GetHWND(), HWND_TOPMOST, static_cast<INT>(pos.x), static_cast<INT>(pos.y), static_cast<INT>(size.x + 1), static_cast<INT>(size.y + 1), SWP_NOACTIVATE);
 	}
 	else {
-		SetWindowPos(UIWINDOW.GetHWND(), HWND_NOTOPMOST, pos.x, pos.y, size.x + 1, size.y + 1, SWP_NOACTIVATE);
+		SetWindowPos(UIWINDOW.GetHWND(), HWND_NOTOPMOST, static_cast<INT>(pos.x), static_cast<INT>(pos.y), static_cast<INT>(size.x + 1), static_cast<INT>(size.y + 1), SWP_NOACTIVATE);
 	}
 
 	//SetWindowPos(UIWINDOW.GetHWND(), HWND_NOTOPMOST, pos.x, pos.y, size.x + 1, size.y + 1, SWP_NOACTIVATE);
@@ -307,7 +307,7 @@ VOID PlayerTable::UpdateTable(FLOAT windowWidth) {
 		if (itr == DAMAGEMETER.begin())
 			max_Damage = (*itr)->GetDamage();
 
-		FLOAT damage_percent = (DOUBLE)(*itr)->GetDamage() / (DOUBLE)max_Damage;
+		FLOAT damage_percent = static_cast<FLOAT>((DOUBLE)(*itr)->GetDamage() / (DOUBLE)max_Damage);
 
 		if (damage_percent > 1)
 			damage_percent = 1;
@@ -601,7 +601,7 @@ VOID PlayerTable::UpdateTable(FLOAT windowWidth) {
 				UINT64 timeDifference = (milliTableTime - playerMetaData->_avgABPreviousTime);
 				DOUBLE currentAB = playerMetaData->GetStat(StatType::ArmorBreak);
 				currentAB = currentAB > 100.0 ? 100.0 : currentAB; // 
-				UINT64 calculatedAvgAB = (playerMetaData->_avgABSum + timeDifference * currentAB);
+				UINT64 calculatedAvgAB = static_cast<UINT64>((playerMetaData->_avgABSum + timeDifference * currentAB));
 
 				savedResult = (DOUBLE)calculatedAvgAB / milliTableTime;
 				sprintf_s(label, 128, "%.1f", savedResult);
@@ -722,7 +722,7 @@ VOID PlayerTable::UpdateTable(FLOAT windowWidth) {
 				acc01savedResult = (DOUBLE)(playerMetaData->_acc01Sum) / milliTableTime;
 			}
 
-			UINT bsAcc2Ongoing = playerMetaData->CalBsAccSet2(false, milliTableTime);
+			UINT64 bsAcc2Ongoing = playerMetaData->CalBsAccSet2(false, milliTableTime);
 			if (bsAcc2Ongoing != 0 && _accumulatedTime == 0) {
 				acc02savedResult = (DOUBLE)(playerMetaData->_acc02Sum + bsAcc2Ongoing) / milliTableTime;
 			}

@@ -44,7 +44,6 @@ DWORD MyWinDivert::ReceiveCallback(LPVOID prc) {
 		UINT addrlen = sizeof(WINDIVERT_ADDRESS);
 
 		BYTE* pkt_data = new BYTE[WINDIVERT_MTU_MAX];
-		UINT packetlen = _msize(pkt_data);
 
 		UINT recvlen = 0;
 
@@ -53,7 +52,7 @@ DWORD MyWinDivert::ReceiveCallback(LPVOID prc) {
 		while (TRUE) {
 
 			// Windivert 1.4.2
-				if (!WinDivertRecvEx(_this->_handle, pkt_data, packetlen, 0, &addr, &recvlen, NULL)) {
+				if (!WinDivertRecvEx(_this->_handle, pkt_data, WINDIVERT_MTU_MAX, 0, &addr, &recvlen, NULL)) {
 			// WinDivert 2.2
 			//if (!WinDivertRecvEx(_this->_handle, pkt_data, packetlen, &recvlen, 0, &addr, &addrlen, NULL)) {
 		

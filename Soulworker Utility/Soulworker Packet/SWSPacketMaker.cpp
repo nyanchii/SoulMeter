@@ -1,7 +1,7 @@
 #include "pch.h"
 #include ".\Soulworker Packet\PacketType.h"
 #include ".\Soulworker Packet\SWSPacketMaker.h"
-#include ".\Soulworker Packet\SWCrypt.h";
+#include ".\Soulworker Packet\SWCrypt.h"
 
 SWSPacketMaker::SWSPacketMaker() {
 	_isSegmentation = FALSE;
@@ -83,7 +83,7 @@ BYTE* SWSPacketMaker::GetSWData(IPv4Packet* packet) {
 VOID SWSPacketMaker::Decrypt(BYTE* data, const UINT size, const UINT start, const UINT keyIndex) {
 	if (data == nullptr || size < 0 || start < 0)
 		return;
-	INT32 _size = size;
+	UINT _size = size;
 
 	if (_SWMAGIC == 5) {
 		SWCRYPT.DecryptPacket(data + start, size - start, keyIndex);

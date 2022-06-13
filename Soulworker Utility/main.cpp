@@ -4,8 +4,6 @@
 #include ".\UI\UiWindow.h"
 #include ".\Damage Meter\MySQLite.h"
 
-#pragma locale ("zh-TW")
-
 #if defined(DEBUG) || defined(_DEBUG)
 #pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console" )
 #endif

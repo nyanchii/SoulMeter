@@ -27,20 +27,20 @@ VOID SpecificInformation::SetupFontScale() {
 	_tableFontScale = _globalFontScale * UIOPTION.GetTableFontScale();
 }
 
-VOID SpecificInformation::Update(BOOL* open, INT32 index) {
+VOID SpecificInformation::Update(BOOL* open, INT64 index) {
 
 	SetupFontScale();
 
 	_accumulatedTime += UIWINDOW.GetDeltaTime();
 
 	if (_accumulatedTime > UIOPTION.GetRefreshTime()) {
-		_tableTime = DAMAGEMETER.GetTime() / 1000;
+		_tableTime = static_cast<FLOAT>((DOUBLE)DAMAGEMETER.GetTime() / 1000);
 		_accumulatedTime = 0;
 	}
 
 	CHAR title[128] = { 0 };
 
-	sprintf_s(title, 128, "%s %s ###SpecificInformation%d", DAMAGEMETER.GetPlayerName(_playerID), STR_DETAIL_DETAIL, index);
+	sprintf_s(title, 128, "%s %s ###SpecificInformation%lld", DAMAGEMETER.GetPlayerName(_playerID), STR_DETAIL_DETAIL, index);
 	ImGui::Begin(title, (bool*)open, ImGuiWindowFlags_None);
 	{
 		sprintf_s(title, 128, "##tab");
@@ -113,7 +113,7 @@ VOID SpecificInformation::UpdateSkillTotalTable()
 		ImGui::TableHeadersRow();
 
 		CHAR comma[128] = { 0 }; CHAR label[128] = { 0 };
-		UINT windowWidth = ImGui::GetWindowWidth();
+		FLOAT windowWidth = ImGui::GetWindowWidth();
 
 		ImGui::SetWindowFontScale(_tableFontScale);
 
@@ -208,7 +208,7 @@ VOID SpecificInformation::UpdateSkillTable() {
 
 		UINT64 max_Damage = 1;
 		CHAR comma[128] = { 0 }; CHAR label[128] = { 0 };
-		UINT windowWidth = ImGui::GetWindowWidth();
+		FLOAT windowWidth = ImGui::GetWindowWidth();
 
 		ImGui::SetWindowFontScale(_tableFontScale);
 
@@ -217,7 +217,7 @@ VOID SpecificInformation::UpdateSkillTable() {
 			if (itr == (*monster)->begin())
 				max_Damage = (*itr)->GetDamage();
 
-			FLOAT damage_percent = (DOUBLE)(*itr)->GetDamage() / (DOUBLE)max_Damage;
+			FLOAT damage_percent = static_cast<FLOAT>((DOUBLE)(*itr)->GetDamage() / (DOUBLE)max_Damage);
 
 			if (damage_percent > 1)
 				damage_percent = 1;
@@ -351,7 +351,7 @@ VOID SpecificInformation::UpdateBuffTable() {
 
 		ImGui::SetWindowFontScale(_tableFontScale);
 
-		UINT windowWidth = ImGui::GetWindowWidth();
+		FLOAT windowWidth = ImGui::GetWindowWidth();
 		for (auto itr = (*buff)->begin(); itr != (*buff)->end(); itr++) {
 
 			CHAR label[128] = { 0 };

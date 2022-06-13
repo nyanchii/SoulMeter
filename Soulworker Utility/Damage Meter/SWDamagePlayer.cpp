@@ -3,8 +3,8 @@
 #include ".\Damage Meter\SWDamagePlayer.h"
 #include ".\Damage Meter\Damage Meter.h"
 #include ".\Soulworker Packet\PacketInfo.h"
-#include ".\MySQLite.h";
-#include ".\UI\Option.h";
+#include ".\MySQLite.h"
+#include ".\UI\Option.h"
 
 SWDamagePlayer::SWDamagePlayer(UINT32 id, UINT64 totalDMG, UINT64 soulstoneDMG, SWPACKETDAMAGE_DAMAGETYPE damageType, USHORT maxCombo, UINT32 monsterID, UINT32 skillID) {
 	_id = id;
@@ -284,6 +284,7 @@ DOUBLE SWDamagePlayer::GetHistoryBS(int type)
 	case 2:
 		return _historyacc02;
 	}
+	return 0;
 }
 
 VOID SWDamagePlayer::setHistoryLosedHP(DOUBLE losedHP)

@@ -250,7 +250,7 @@ VOID UiWindow::DrawScene() {
 		ImGui::RenderPlatformWindowsDefault();
 	}
 
-	_swapChain->Present(UIOPTION.GetFramerate(), 0);
+	_swapChain->Present(static_cast<UINT>(UIOPTION.GetFramerate()), 0);
 }
 
 LRESULT UiWindow::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {

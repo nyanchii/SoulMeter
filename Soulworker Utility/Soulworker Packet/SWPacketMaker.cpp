@@ -1,7 +1,7 @@
 #include "pch.h"
 #include ".\Soulworker Packet\PacketType.h"
 #include ".\Soulworker Packet\SWPacketMaker.h"
-#include ".\Soulworker Packet\SWCrypt.h";
+#include ".\Soulworker Packet\SWCrypt.h"
 
 SWPacketMaker::SWPacketMaker() {
 	_isSegmentation = FALSE;
@@ -89,7 +89,7 @@ VOID SWPacketMaker::Decrypt(BYTE* data, const UINT size, const UINT start, const
 
 	if (data == nullptr || size < 0 || start < 0)
 		return;
-	INT32 _size = size;
+	UINT32 _size = size;
 
 	if (_SWMAGIC == 5) {
 		SWCRYPT.DecryptPacket(data + start, size - start, keyIndex);
@@ -254,7 +254,7 @@ VOID SWPacketMaker::CreateSWPacket(IPv4Packet* packet) {
 		case OPcode::MAZESTART:
 			swpacket = new SWPacketMazeStart(swheader, data);
 			break;
-		case OPcode::SPAWNED_CHARINFO: //¥Î¤£¨ì
+		case OPcode::SPAWNED_CHARINFO: //ç”¨ä¸åˆ°
 			//swpacket = new SWPacketSpawnedCharInfo(swheader, data);
 			break;
 		case OPcode::IN_INFO_MONSTER: //0605
@@ -337,7 +337,7 @@ VOID SWPacketMaker::CreateSWPacket(IPv4Packet* packet) {
 			break;
 
 			/* 0x2e Force*/
-			// 8¤H²Õ¶¤
+			// 8äººçµ„éšŠ
 		case OPcode::POS: //0430
 			swpacket = new SWPacketPos(swheader, data);
 			break;

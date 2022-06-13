@@ -13,16 +13,16 @@ public:
 	PlotInfo* _plotHistory;
 	UINT32 _worldID;
 	SYSTEMTIME _saveTime;
-	FLOAT _time;
+	ULONG64 _time;
 
-	VOID Setup(vector<SWDamagePlayer*>& history, vector<PLAYERBUF*>& buffHistory, PlotInfo* plotHistory, UINT32 worldID, FLOAT time);
+	VOID Setup(vector<SWDamagePlayer*>& history, vector<PLAYERBUF*>& buffHistory, PlotInfo* plotHistory, UINT32 worldID, ULONG64 time);
 	VOID Clear();
 }HISTORY_INFO;
 
 class SWDamageMeterHistory : public Singleton<SWDamageMeterHistory> {
 private:
 	HISTORY_INFO _historys[HISTORY_SIZE];
-	UINT _curIndex = 0;
+	INT _curIndex = 0;
 	
 	VOID ClearHistory(INT index);
 
@@ -33,7 +33,7 @@ public:
 	VOID push_back(vector<SWDamagePlayer*>& playerInfo, std::vector<PLAYERBUF*>& playerBuffInfo, PlotInfo* playerPlotInfo);
 	SIZE_T size();
 	const HISTORY_INFO& operator[](INT index);
-	UINT GetCurrentIndex()
+	INT GetCurrentIndex()
 	{
 		return _curIndex;
 	}

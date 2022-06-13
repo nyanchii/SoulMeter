@@ -49,7 +49,7 @@ public:
 	VOID ResizeTalbe();
 
 	ULONG64 _lastSendTimestamp = 0;
-	INT _ping = 0;
+	ULONG64 _ping = 0;
 
 	FLOAT GetTableTime()
 	{
